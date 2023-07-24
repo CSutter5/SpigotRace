@@ -46,6 +46,7 @@ public class Plugin extends JavaPlugin
         getCommand("StopRace").setExecutor(new StopRaceCommand());
         getCommand("ActiveRaces").setExecutor(new ActiveRaceCommand());
         getCommand("Editor").setExecutor(new EditorCommand());
+        getCommand("Rename").setExecutor(new RenameCommand());
 
         getServer().getPluginManager().registerEvents(new EditorGUI(), this);
 

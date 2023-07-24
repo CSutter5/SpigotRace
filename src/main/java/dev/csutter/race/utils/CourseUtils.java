@@ -97,6 +97,15 @@ public class CourseUtils {
         return null;
     }
 
+    public static Course renameCourse(Course course, String newName) {
+        courses.remove(course);
+
+        course.setCourseName(newName);
+        courses.add(course);
+        
+        return course;
+    }
+
     public static String getCourseNames() {
         String str = "";
 

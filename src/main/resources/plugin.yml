@@ -49,4 +49,8 @@ commands:
     descrition: Creates a course editor
     usage: /<command> <course name>
 
+  rename:
+    descrition: Renames a course
+    usage: /<command> <og course name> <new course name>
+
   
