@@ -12,6 +12,7 @@ SpigotRace is a Spigot Plugin that allows users to create race courses, and race
 - /startrace [course name] - Start a race if you started it
 - /stoprace [course name] - Stop an ongoing race
 - /activeraces - List all actice races
+- /rename [og course name] [new course name] - Rename a course
 - /editor [course name] - Create an gui editor for a course you made
 
 ## Installing
