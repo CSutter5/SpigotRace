@@ -1,0 +1,52 @@
+name: race
+main: dev.csutter.race.Plugin
+version: 1.0-SNAPSHOT
+api-version: 1.20
+Description: A Sample Description
+
+commands:
+  createcourse:
+    descrition: Make a race course to race on with your friends
+    usage: /<command> <course name>
+
+  deletecourse:
+    descrition: Delete a race course
+    usage: /<command> <course>
+
+  addcheckpoint:
+    descrition: Adds a checkpoint to your course
+    usage: /<command> <course>
+
+  listcourses:
+    descrition: Lists all of the courses
+    usage: /<command>
+
+  createrace:
+    descrition: Create a race on one of the cources
+    usage: /<command> <course> <racename>
+
+  joinrace:
+    descrition: Join an active race
+    usage: /<command> <racename>
+
+  leaverace:
+    descrition: Leave an active race
+    usage: /<command> <racename>
+
+  startrace:
+    descrition: Start a race that you have made
+    usage: /<command> <course name>
+
+  stoprace:
+    descrition: Stop the race you created
+    usage: /<command> <course name>
+
+  activeraces:
+    descrition: Get a list of active races
+    usage: /<command>
+
+  editor:
+    descrition: Creates a course editor
+    usage: /<command> <course name>
+
+  
