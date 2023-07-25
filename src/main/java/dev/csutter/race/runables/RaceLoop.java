@@ -3,8 +3,10 @@ package dev.csutter.race.runables;
 import java.util.ArrayList;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.scheduler.BukkitRunnable;
 
+import dev.csutter.race.Plugin;
 import dev.csutter.race.models.Checkpoint;
 import dev.csutter.race.models.Course;
 import dev.csutter.race.models.Racer;
@@ -28,17 +30,25 @@ public class RaceLoop extends BukkitRunnable {
 
         racersDone = new ArrayList<Racer>();
     }
-
+    
     @Override
     public void run() {
+        if (course.getCheckpoints().size() == 0) {
+            Plugin.getLog().info("Tried to race on track with no checkpoints");
+            this.cancel();
+            return;
+        }
+
         if (!hasStarted) {
-            for (Racer p : racers)
+            for (Racer p : racers) {
                 // tp them to the starting checkpoint
-                p.getPlayer().teleport(course.getCheckpoints().get(0).getLocation());
+                Checkpoint firstCheckpoint = course.getCheckpoints().get(0);
+                
+                p.getPlayer().teleport(firstCheckpoint.lookAt(course.getCheckpoints().get(1).getLocation()));
+            }
 
             hasStarted = true;
         }
-
 
         // When no one is left in the list the race is over
         if (racers.size() == 0) {

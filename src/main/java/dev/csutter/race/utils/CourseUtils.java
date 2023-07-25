@@ -103,6 +103,8 @@ public class CourseUtils {
         course.setCourseName(newName);
         courses.add(course);
         
+        try { saveCourses(); } catch (IOException e) { Plugin.getLog().info("Failed to save courses"); }
+        
         return course;
     }
 

@@ -24,6 +24,11 @@ public class CreateRaceCommand implements CommandExecutor {
 
         Course c = CourseUtils.getCourse(args[0]);
 
+        if (c == null) {
+            sender.sendMessage("Could not find the race course you were looking for");
+            return false;
+        }
+
         RaceUtils.CreateRace(c, new Racer(c.getCheckpoints(), (Player)sender));
 
         sender.sendMessage("Created Race");
