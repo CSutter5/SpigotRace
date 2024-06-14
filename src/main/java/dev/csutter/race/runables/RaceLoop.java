@@ -40,12 +40,11 @@ public class RaceLoop extends BukkitRunnable {
         }
 
         if (!hasStarted) {
-            for (Racer p : racers) {
-                // tp them to the starting checkpoint
-                Checkpoint firstCheckpoint = course.getCheckpoints().get(0);
-                
-                p.getPlayer().teleport(firstCheckpoint.lookAt(course.getCheckpoints().get(1).getLocation()));
-            }
+            // tp them to the starting checkpoint
+            Location firstCheckpoint = course.getCheckpoints().get(0).lookAt(course.getCheckpoints().get(1).getLocation());
+
+            for (Racer p : racers)
+                p.getPlayer().teleport(firstCheckpoint);
 
             hasStarted = true;
         }
